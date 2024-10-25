@@ -21,6 +21,11 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8",
-        "bootstrap": "^5.3.3"
+        "aos": "^2.3.4",
+        "bootstrap": "^5.3.3",
+        "bootstrap-icons": "^1.11.3",
+        "glightbox": "^3.3.0",
+        "swiper": "^11.1.14",
+        "swiper-bundle": "^0.0.1-security"
     }
 }

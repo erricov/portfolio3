@@ -1,16 +1,10 @@
 <template>
-  <div v-if="loading" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div class="spinner-border" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  </div>
-  <div v-else>
-    <!-- Contenido de la página una vez que ha cargado -->
-    <slot></slot>
-  </div>
+  <!-- Preloader -->
+  <div id="preloader"></div>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -20,7 +14,8 @@ export default {
   mounted() {
     // Simulación de carga. Aquí podrías hacer la llamada a la API o algo similar.
     setTimeout(() => {
-      this.loading = false;
+      const preloader = document.querySelector('#preloader');
+      preloader.remove();
     }, 1000); // Cambia el tiempo según tu necesidad
   },
 };
