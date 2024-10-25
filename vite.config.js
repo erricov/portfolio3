@@ -5,8 +5,14 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
     plugins: [
         laravel({
-            input: 'resources/js/app.js',
-            ssr: 'resources/js/ssr.js',
+            input: {
+                frontend: 'resources/frontend/js/app.js',
+                backend: 'resources/backend/js/app.js',
+            },
+            ssr: [
+                'resources/frontend/js/ssr.js',
+                'resources/backend/js/ssr.js',
+            ],
             refresh: true,
         }),
         vue({
@@ -18,4 +24,10 @@ export default defineConfig({
             },
         }),
     ],
+    resolve: {
+        alias: {
+            '@': '/resources/frontend/js',
+            '@backend': '/resources/backend/js',
+        },
+    },
 });
