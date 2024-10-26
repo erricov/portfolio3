@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\MenuController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -48,21 +49,26 @@ Route::get('/contact', function () {
 })->name('contact');
 
 // BACKEND
+Route::get('/menu-links', [MenuController::class, 'menuLinks'])->name('menu.menuLinks');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', function () {
         return Inertia::render('Dashboard');
-    });
-});
+    })->name('dashboard');
 
-Route::get('admin/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
+    Route::get('/menu', [MenuController::class, 'edit'])->name('menu.edit');
+    Route::patch('/menu', [MenuController::class, 'update'])->name('menu.update');
+    Route::delete('/menu', [MenuController::class, 'destroy'])->name('menu.destroy');
+    // Route::get('/menu-links', [MenuController::class, 'menuLinks'])->name('menu.menuLinks');
 
-Route::middleware('auth')->group(function () {
-    Route::get('admin/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('admin/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('admin/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('admin.dashboard');
 });
 
 require __DIR__.'/auth.php';
