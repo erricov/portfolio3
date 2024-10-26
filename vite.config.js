@@ -28,6 +28,7 @@ export default defineConfig({
         alias: {
             '@': '/resources/frontend/js',
             '@backend': '/resources/backend/js',
+            '@img': '/public/media'
         },
     },
 });

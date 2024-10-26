@@ -27,6 +27,10 @@ Route::get('/', function () {
 );
 });
 
+Route::get('/about', function () {
+    return Inertia::render('About');
+})->name('about');
+
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
         return Inertia::render('Dashboard');
