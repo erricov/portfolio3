@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import axios from 'axios';
 import Logo from '@img/logo.png';
 import NavLink from '@/Components/NavLink.vue';
 
@@ -10,19 +9,26 @@ const links = ref([]);
 
 // Fetch links on component mount
 onMounted(() => {
-  axios.get('/menu-links')
-    .then((response) => {
-      links.value = response.data;
-      console.log("HELLO");
-      console.log(links.value); // Ensure this logs after data is fetched
-    })
-    .catch((error) => {
-      if (error.response && error.response.status === 404) {
-        console.error('Menu links not found (404):', error.response);
-      } else {
-        console.error('Error fetching menu links:', error);
-      }
-    });
+  const cachedLinks = localStorage.getItem('menuLinks');
+  
+  if (cachedLinks) {
+    links.value = JSON.parse(cachedLinks);
+    // console.log('Using cached menu links:', links.value);
+  } else {
+    axios.get('/menu-links')
+      .then((response) => {
+        links.value = response.data; // Update the value of the ref
+        localStorage.setItem('menuLinks', JSON.stringify(links.value)); // Cache the data
+        // console.log('Fetched menu links:', links.value); // Ensure this logs after data is fetched
+      })
+      .catch((error) => {
+        if (error.response && error.response.status === 404) {
+          console.error('Menu links not found (404):', error.response);
+        } else {
+          console.error('Error fetching menu links:', error);
+        }
+      });
+  }
 });
 
 // Toggle 'scrolled' class on body when scrolled down
@@ -48,6 +54,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
+  <!-- <pre>{{ links }}</pre> Para verificar los datos en el DOM -->
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
@@ -56,12 +64,14 @@ onBeforeUnmount(() => {
         <h1 class="sitename">{{ siteName }}</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <!-- Condicional para mostrar los enlaces solo cuando estén disponibles -->
+      <nav v-if="links.length" id="navmenu" class="navmenu">
         <ul>
           <li v-for="link in links" :key="link.id">
             <NavLink
-              :href="route(link.link)"
-              :active="route().current(link.link)"
+              v-if="link && link.url"
+              :href="route(link.url)"
+              :active="route().current(link.url)"
             >
               {{ link.name }}
             </NavLink>
