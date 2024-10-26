@@ -6,6 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 // import "aos/dist/aos.css";
 import "glightbox/dist/css/glightbox.min.css"
 import '../css/app.css';
+import '../css/style.css';
 
 import 'bootstrap/dist/js/bootstrap.bundle';
 // import 'aos/dist/aos';

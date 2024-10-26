@@ -1,14 +1,15 @@
 <script setup>
 import Logo from '@img/logo.png';
+import NavLink from '@/Components/NavLink.vue';
 
 var siteName = 'Ely Errico';
 
 var links = [
-    { 'text': 'Home', 'link': '#hero' },
-    { 'text': 'About', 'link': '#/about' },
-    { 'text': 'Services', 'link': '#services' },
-    { 'text': 'Portfolio', 'link': '#portfolio' },
-    { 'text': 'Contact', 'link': '#contact' },
+    { 'text': 'Home', 'link': 'homepage' },
+    { 'text': 'About', 'link': 'about' },
+    { 'text': 'Services', 'link': 'services' },
+    { 'text': 'Portfolio', 'link': 'portfolio' },
+    { 'text': 'Contact', 'link': 'contact' },
 ]
 
 
@@ -41,7 +42,14 @@ window.addEventListener('load', toggleScrolled);
       <nav id="navmenu" class="navmenu">
         <ul>
             <li v-for="link in links" :key="link.text">
-                <a :href="link.link">{{ link.text }}</a>
+              <NavLink
+                  :href="route(link.link)"
+                  :active="route().current(link.link)"
+              >
+                {{ link.text }}
+              </NavLink>
+
+                <!-- <a :href="route(link.link)">{{ link.text }}</a> -->
             </li>
             <!-- <li><a href="#team">Team</a></li> -->
             <!-- <li><a href="#pricing">Pricing</a></li> -->

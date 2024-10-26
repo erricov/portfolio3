@@ -17,7 +17,7 @@ use Inertia\Inertia;
 // });
 
 Route::get('/', function () {
-    return Inertia::render('Welcome',
+    return Inertia::render('Homepage',
     [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -30,6 +30,24 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return Inertia::render('About');
 })->name('about');
+
+Route::get('/homepage', function () {
+    return Inertia::render('Homepage');
+})->name('homepage');
+
+Route::get('/services', function () {
+    return Inertia::render('services');
+})->name('services');
+
+Route::get('/portfolio', function () {
+    return Inertia::render('portfolio');
+})->name('portfolio');
+
+Route::get('/contact', function () {
+    return Inertia::render('contact');
+})->name('contact');
+
+// BACKEND
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {

@@ -1,18 +1,37 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import GuestLayout from '@/Layouts/GuestLayout.vue';
+
 import Spinner from '@/Components/Spinner.vue';
-import Header from '../Components/Sections/Header.vue';
+
 </script>
 
 <template>
     <Head title="About" />
- 
-        
-    <Header />
 
-    <main class="main">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos architecto id, vero illum ut consequuntur dolorem labore. Ratione nihil voluptate dolore voluptatem hic amet sint! Repellat officiis impedit quod laborum!
-    </main>
+    <GuestLayout>
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet quibusdam fuga perspiciatis ea corporis quae assumenda eos non nesciunt, excepturi unde molestiae. Temporibus maiores sed tempora aperiam nam omnis.
+    </GuestLayout>
 
     <footer id="footer" class="footer">
 
