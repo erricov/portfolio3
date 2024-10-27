@@ -60,7 +60,8 @@ onBeforeUnmount(() => {
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img :src="Logo" alt="Logo">
+        <!-- <img :src="Logo" alt="Logo"> -->
+        <div class="logo-css">Ee</div>
         <h1 class="sitename">{{ siteName }}</h1>
       </a>
 
@@ -80,7 +81,7 @@ onBeforeUnmount(() => {
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#about">Get Started</a>
+      <!-- <a class="btn-getstarted" href="#about">Get Started</a> -->
 
     </div>
   </header>

@@ -118,118 +118,131 @@ import Spinner from '@/Components/Spinner.vue';
           
         </section><!-- /Services Section -->
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills section">
+       <!-- Skills Section -->
+<section id="skills" class="skills section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row">
+      <div class="col-lg-6 d-flex align-items-center">
+        <img src="/media/skills.png" class="img-fluid" alt="Habilidades de desarrollo web">
+      </div>
 
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-6 pt-4 pt-lg-0 content">
+        <h3>Transformo tus ideas en aplicaciones de alto rendimiento</h3>
+        <p class="fst-italic">
+          Mi enfoque es construir soluciones digitales que impulsen a las empresas, combinando tecnología de vanguardia y una implementación personalizada.
+        </p>
 
-            <div class="row">
+        <div class="skills-content skills-animation">
 
-              <div class="col-lg-6 d-flex align-items-center">
-                <img src="/media/skills.png" class="img-fluid" alt="">
-              </div>
-
-              <div class="col-lg-6 pt-4 pt-lg-0 content">
-
-                <h3>Transforma tus ideas en realidad con tecnología de vanguardia</h3>
-                <p class="fst-italic">
-                  Convierto tus conceptos en aplicaciones robustas y eficientes, utilizando las últimas tecnologías y metodologías de desarrollo.
-                </p>
-
-                <div class="skills-content skills-animation">
-
-                  <div class="progress">
-                    <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-                    <div class="progress-bar-wrap">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div><!-- End Skills Item -->
-
-                  <div class="progress">
-                    <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-                    <div class="progress-bar-wrap">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div><!-- End Skills Item -->
-
-                  <div class="progress">
-                    <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-                    <div class="progress-bar-wrap">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div><!-- End Skills Item -->
-
-                  <div class="progress">
-                    <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
-                    <div class="progress-bar-wrap">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div><!-- End Skills Item -->
-
-                </div>
-
-              </div>
+          <div class="progress">
+            <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
+          </div><!-- End Skills Item -->
 
-          </div>
+          <div class="progress">
+            <span class="skill"><span>CSS</span> <i class="val">95%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
 
-        </section><!-- /Skills Section -->
+          <div class="progress">
+            <span class="skill"><span>JavaScript</span> <i class="val">85%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>PHP</span> <i class="val">90%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Laravel</span> <i class="val">85%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>Vue.js</span> <i class="val">80%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+          <div class="progress">
+            <span class="skill"><span>SQL/MySQL</span> <i class="val">90%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div><!-- End Skills Item -->
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section><!-- /Skills Section -->
+
 
         <!-- Why Us Section -->
         <section id="why-us" class="section why-us light-background" data-builder="section">
-
           <div class="container-fluid">
-
             <div class="row gy-4">
-
               <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
-
                 <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
-                  <h3><span>Eum ipsam laborum deleniti </span><strong>velit pariatur architecto aut nihil</strong></h3>
+                  <h3><span>¿Por qué trabajar conmigo?</span></h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                    Con años de experiencia en desarrollo Full Stack, ofrezco un enfoque personalizado para cada proyecto. Mi misión es construir aplicaciones web a la medida, manteniendo altos estándares de calidad y rendimiento para satisfacer las necesidades específicas de cada cliente.
                   </p>
                 </div>
 
                 <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
-
                   <div class="faq-item faq-active">
-
-                    <h3><span>01</span> Non consectetur a erat nam at lectus urna duis?</h3>
+                    <h3><span>01</span> ¿Cómo garantizo la calidad en cada proyecto?</h3>
                     <div class="faq-content">
-                      <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                      <p>
+                        Mantengo una metodología basada en pruebas y revisiones constantes para asegurar que cada aspecto de la aplicación funcione de forma óptima y esté alineado con tus objetivos.
+                      </p>
                     </div>
                     <i class="faq-toggle bi bi-chevron-right"></i>
                   </div><!-- End Faq item-->
 
                   <div class="faq-item">
-                    <h3><span>02</span> Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                    <h3><span>02</span> ¿Cuál es mi enfoque hacia el diseño y la funcionalidad?</h3>
                     <div class="faq-content">
-                      <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                      <p>
+                        Creo que el diseño debe ir de la mano con la funcionalidad. Trabajo para crear interfaces intuitivas y atractivas, que no solo destaquen visualmente, sino que también sean prácticas y eficientes.
+                      </p>
                     </div>
                     <i class="faq-toggle bi bi-chevron-right"></i>
                   </div><!-- End Faq item-->
 
                   <div class="faq-item">
-                    <h3><span>03</span> Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                    <h3><span>03</span> ¿Qué tecnologías utilizo?</h3>
                     <div class="faq-content">
-                      <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
+                      <p>
+                        Uso tecnologías modernas como Laravel y Vue.js para construir aplicaciones robustas y escalables, ideales para adaptarse al crecimiento de tu negocio en el mundo digital.
+                      </p>
                     </div>
                     <i class="faq-toggle bi bi-chevron-right"></i>
                   </div><!-- End Faq item-->
-
                 </div>
-
               </div>
 
               <div class="col-lg-5 order-1 order-lg-2 why-us-img">
                 <img src="/media/why-us.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
               </div>
             </div>
-
           </div>
-
         </section><!-- /Why Us Section -->
+
 
         <!-- Call To Action Section -->
         <section id="call-to-action" class="call-to-action section dark-background">
@@ -240,11 +253,11 @@ import Spinner from '@/Components/Spinner.vue';
 
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
               <div class="col-xl-9 text-center text-xl-start">
-                <h3>Call To Action</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h3>Construyamos el Futuro Digital de Tu Negocio</h3>
+                <p>Transforma tus ideas en soluciones innovadoras y eficientes. Juntos, llevemos tu proyecto al siguiente nivel, creando herramientas que impulsen el éxito y crecimiento de tu empresa.</p>
               </div>
               <div class="col-xl-3 cta-btn-container text-center">
-                <a class="cta-btn align-middle" href="#">Call To Action</a>
+                <a class="cta-btn align-middle" href="#">Comienza Ahora</a>
               </div>
             </div>
 
@@ -253,7 +266,7 @@ import Spinner from '@/Components/Spinner.vue';
         </section><!-- /Call To Action Section -->
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio section">
+        <section id="portfolio" class="portfolio section d-none">
 
           <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
@@ -373,7 +386,7 @@ import Spinner from '@/Components/Spinner.vue';
         </section><!-- /Portfolio Section -->
 
         <!-- Team Section -->
-        <section id="team" class="team section">
+        <section id="team" class="team section d-none">
 
           <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
@@ -460,7 +473,7 @@ import Spinner from '@/Components/Spinner.vue';
         </section><!-- /Team Section -->
 
         <!-- Pricing Section -->
-        <section id="pricing" class="pricing section light-background">
+        <section id="pricing" class="pricing section light-background d-none">
 
           <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
@@ -524,7 +537,7 @@ import Spinner from '@/Components/Spinner.vue';
         </section><!-- /Pricing Section -->
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="testimonials section">
+        <section id="testimonials" class="testimonials section d-none">
 
           <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
@@ -630,8 +643,8 @@ import Spinner from '@/Components/Spinner.vue';
 
           <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
-            <h2>Frequently Asked Questions</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>Preguntas Frecuentes</h2>
+            <p>¿Tienes alguna duda? Aquí encontrarás las respuestas a las preguntas más frecuentes</p>
           </div><!-- End Section Title -->
 
           <div class="container">
@@ -644,45 +657,49 @@ import Spinner from '@/Components/Spinner.vue';
 
                   <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
                     <i class="faq-icon bi bi-question-circle"></i>
-                    <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                    <h3>¿Cuál es el tiempo estimado de desarrollo de una aplicación web?</h3>
                     <div class="faq-content">
-                      <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                      <p>El tiempo de desarrollo de una aplicación web depende de la complejidad del proyecto. En general, el tiempo estimado de desarrollo de una aplicación web es de 2 a 6 semanas.</p>
                     </div>
                     <i class="faq-toggle bi bi-chevron-right"></i>
                   </div><!-- End Faq item-->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                     <i class="faq-icon bi bi-question-circle"></i>
-                    <h3>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h3>
+                    <h3>¿Ofreces soporte después de finalizar el proyecto?</h3>
                     <div class="faq-content">
-                      <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                      <p>Sí, ofrezco soporte técnico y mantenimiento para asegurar el buen funcionamiento de las soluciones entregadas.</p>
                     </div>
                     <i class="faq-toggle bi bi-chevron-right"></i>
                   </div><!-- End Faq item-->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                     <i class="faq-icon bi bi-question-circle"></i>
-                    <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                    <h3>¿Cuál es el costo de desarrollo de una aplicación web?</h3>
                     <div class="faq-content">
-                      <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
+                      <p>El costo de desarrollo de una aplicación web depende de la complejidad del proyecto. Para obtener un presupuesto personalizado, por favor, ponte en contacto conmigo.</p>
                     </div>
                     <i class="faq-toggle bi bi-chevron-right"></i>
                   </div><!-- End Faq item-->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                     <i class="faq-icon bi bi-question-circle"></i>
-                    <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                    <h3>¿Qué tecnologías utilizas para el desarrollo de aplicaciones web?</h3>
                     <div class="faq-content">
-                      <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                      <p>
+                        Utilizo tecnologías modernas y de última generación para el desarrollo de aplicaciones web, como HTML5, CSS3, JavaScript, PHP, MySQL, entre otras.
+                      </p>
                     </div>
                     <i class="faq-toggle bi bi-chevron-right"></i>
                   </div><!-- End Faq item-->
 
                   <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
                     <i class="faq-icon bi bi-question-circle"></i>
-                    <h3>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h3>
+                    <h3>¿Cómo puedo solicitar un presupuesto para el desarrollo de una aplicación web?</h3>
                     <div class="faq-content">
-                      <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                      <p>
+                        Para solicitar un presupuesto para el desarrollo de una aplicación web, por favor, ponte en contacto conmigo a través del formulario de contacto o enviando un correo electrónico a elyerrico@gmail.com
+                      </p>
                     </div>
                     <i class="faq-toggle bi bi-chevron-right"></i>
                   </div><!-- End Faq item-->
@@ -702,8 +719,8 @@ import Spinner from '@/Components/Spinner.vue';
 
           <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
-            <h2>Contact</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <h2>Contacto</h2>
+            <p>¿Tienes alguna pregunta o deseas solicitar un presupuesto? Ponte en contacto conmigo</p>
           </div><!-- End Section Title -->
 
           <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -716,24 +733,24 @@ import Spinner from '@/Components/Spinner.vue';
                   <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                     <i class="bi bi-geo-alt flex-shrink-0"></i>
                     <div>
-                      <h3>Address</h3>
-                      <p>A108 Adam Street, New York, NY 535022</p>
+                      <h3>Direccion</h3>
+                      <p>Via Gioacchino Murat 126, 70123 Bari, Italia</p>
                     </div>
                   </div><!-- End Info Item -->
 
                   <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                     <i class="bi bi-telephone flex-shrink-0"></i>
                     <div>
-                      <h3>Call Us</h3>
-                      <p>+1 5589 55488 55</p>
+                      <h3>Teléfono</h3>
+                      <p>+39 392 523 8575</p>
                     </div>
                   </div><!-- End Info Item -->
 
                   <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                     <i class="bi bi-envelope flex-shrink-0"></i>
                     <div>
-                      <h3>Email Us</h3>
-                      <p>info@example.com</p>
+                      <h3>Correo</h3>
+                      <p>elyerrico@gmail.com</p>  
                     </div>
                   </div><!-- End Info Item -->
 
