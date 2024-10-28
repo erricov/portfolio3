@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Http\RedirectResponse;
 
 class MenuController extends Controller
 {
@@ -25,9 +26,6 @@ class MenuController extends Controller
 
     }
 
-    /**
-     * Display the user's profile form.
-     */
     public function edit(Request $request): Response
     {
 
@@ -36,6 +34,20 @@ class MenuController extends Controller
         ]);
     }
 
+    /**
+     * Delete Menu Item
+     */
+    public function destroy(Request $request): RedirectResponse
+    {
+        // dd($request->id);
+        $request->validate([
+            'id' => ['required'],
+        ]);
+
+        Menu::find($request->id)->delete();
+
+        return Redirect::route('menu.edit');
+    }
 
     // send links to frontend
     public function menuLinks(){
