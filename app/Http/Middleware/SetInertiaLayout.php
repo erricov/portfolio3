@@ -11,7 +11,7 @@ class SetInertiaLayout
     public function handle($request, Closure $next)
     {
         // Verifica si la ruta está en el frontend o en el backend
-        if ($request->is('admin/*')) {
+        if ($request->is('admin/*') || $request->is('admin')) {
             // Usa el layout del backend
             Inertia::setRootView('Backend.app');
         } else {

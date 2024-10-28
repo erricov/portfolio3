@@ -53,16 +53,17 @@ Route::get('/menu-links', [MenuController::class, 'menuLinks'])->name('menu.menu
 
 Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', function () {
-        return Inertia::render('Dashboard');
+        return redirect()->route('admin.dashboard');
     })->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
+
+    Route::get('/menu', [MenuController::class, 'index'])->name('menu.edit');
     Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
-    Route::get('/menu', [MenuController::class, 'edit'])->name('menu.edit');
-    Route::patch('/menu', [MenuController::class, 'update'])->name('menu.update');
+    Route::put('/menu', [MenuController::class, 'update'])->name('menu.update');
     Route::delete('/menu', [MenuController::class, 'destroy'])->name('menu.destroy');
     // Route::get('/menu-links', [MenuController::class, 'menuLinks'])->name('menu.menuLinks');
 

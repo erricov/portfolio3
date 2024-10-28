@@ -1,5 +1,6 @@
 <script setup>
 import DeleteLink from "./DeleteLink.vue";
+import EditLink from "./EditLink.vue";
 
 defineProps({
     links: {
@@ -27,12 +28,9 @@ defineProps({
                     <span class="flex-1">
                         {{ link.name }}
                     </span>
-                    <!-- Edit button -->
-                    <button
-                        class="bg-blue-500 text-white px-1 py-0.5 rounded hover:bg-blue-600 text-sm"
-                    >
-                        Edit
-                    </button>
+
+
+                    <EditLink :link="link" />
                     <DeleteLink :link="link" />
                 </li>
             </ul>

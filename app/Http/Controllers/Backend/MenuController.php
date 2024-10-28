@@ -12,6 +12,14 @@ use Illuminate\Http\RedirectResponse;
 class MenuController extends Controller
 {
 
+    public function index(Request $request): Response
+    {
+
+        return Inertia::render('Menu/Index', [
+            'links' => Menu::all(),
+        ]);
+    }
+
     // Store the menu items
     public function store(Request $request)
     {
@@ -26,12 +34,21 @@ class MenuController extends Controller
 
     }
 
-    public function edit(Request $request): Response
+    /**
+     * Update Menu Item
+     */
+    public function update(Request $request): RedirectResponse
     {
-
-        return Inertia::render('Menu/Edit', [
-            'links' => Menu::all(),
+        // dd($request->all());
+        $request->validate([
+            'id' => ['required'],
+            'name' => ['required', 'max:255'],
+            'url' => ['required', 'max:255'],
         ]);
+
+        Menu::find($request->id)->update($request->all());
+
+        return Redirect::route('menu.edit');
     }
 
     /**
