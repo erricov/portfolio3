@@ -3,12 +3,15 @@ import InputError from '@backend/Components/InputError.vue';
 import InputLabel from '@backend/Components/InputLabel.vue';
 import PrimaryButton from '@backend/Components/PrimaryButton.vue';
 import TextInput from '@backend/Components/TextInput.vue';
+import SelectInput from '@backend/Components/SelectInput.vue';
 import { Link, useForm, usePage } from '@inertiajs/vue3';
 
 // const { $inertia } = usePage();
 const form = useForm({
     name: '',
     url: '',
+    type: 'route',
+    sort_order: 0,
 });
 
 const addLink = () => {
@@ -34,7 +37,7 @@ const addLink = () => {
 
         <form @submit.prevent="addLink" class="mt-6 space-y-6">
             <div>
-                <InputLabel for="name" value="Link Name" />
+                <InputLabel for="name" value="Name" />
 
                 <TextInput
                     id="name"
@@ -51,7 +54,7 @@ const addLink = () => {
             </div>
 
             <div>
-                <InputLabel for="url" value="Link URL" />
+                <InputLabel for="url" value="URL" />
 
                 <TextInput
                     id="url"
@@ -63,6 +66,40 @@ const addLink = () => {
 
                 <InputError :message="form.errors.url" class="mt-2" />
             </div>
+
+            <!-- Type -->
+            <div class="flex justify-between">
+                <div>
+                    <InputLabel for="type" value="Type" />
+
+                    <SelectInput
+                        id="type"
+                        v-model="form.type"
+                        class="mt-1 block w-full"
+                        :options="[
+                            { value: 'url', label: 'URL' },
+                            { value: 'route', label: 'Route' },
+                        ]"
+                    />
+
+                    <InputError :message="form.errors.type" class="mt-2" />
+                </div>
+                <div>
+                    <!-- sort -->
+                    <InputLabel for="sort_order" value="Sort Order" />
+
+                    <TextInput
+                        id="sort_order"
+                        v-model="form.sort_order"
+                        type="number"
+                        class="mt-1 block w-full"
+                        autocomplete="sort_order"
+                    />
+
+                    <InputError :message="form.errors.sort_order" class="mt-2" />
+                </div>
+            </div>
+           
 
             <div>
                 <button

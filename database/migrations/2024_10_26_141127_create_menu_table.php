@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('url');
             $table->string('icon')->nullable();
+            $table->string('type')->default('route');
+            $table->integer('sort_order')->default(0);
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->foreign('parent_id')->references('id')->on('menu')->onDelete('cascade');            
             $table->timestamps();

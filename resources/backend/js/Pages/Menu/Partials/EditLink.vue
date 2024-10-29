@@ -16,6 +16,8 @@ const form = useForm({
     id: "",
     name: "",
     url: "",
+    type: "route",
+    sort_order: 0,
 });
 
 const openModal = ref(false);
@@ -24,6 +26,8 @@ const openingModal = (link) => {
     form.id = link.id;
     form.name = link.name;
     form.url = link.url;
+    form.type = link.type;
+    form.sort_order = link.sort_order;
     openModal.value = true;
 };
 
@@ -83,6 +87,39 @@ const updateLink = () => {
                         class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                     <p class="mt-2 text-sm text-red-600" v-if="form.errors.url">{{ form.errors.url }}</p>
+                </div>
+
+                <div class="flex mt-6">
+                    <!-- type -->
+                    <div class="w-1/2 pr-2">
+                        <label for="type" class="block text-sm font-medium text-gray-700">
+                            Type
+                        </label>
+                        <select
+                            v-model="form.type"
+                            id="type"
+                            name="type"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        >
+                            <option value="route">Route</option>
+                            <option value="url">URL</option>
+                        </select>
+                        <p class="mt-2 text-sm text-red-600" v-if="form.errors.type">{{ form.errors.type }}</p>
+                    </div>
+                    <!-- sort -->
+                    <div class="w-1/2 pl-2">
+                        <label for="sort_order" class="block text-sm font-medium text-gray-700">
+                            Sort Order
+                        </label>
+                        <input
+                            v-model="form.sort_order"
+                            type="number"
+                            name="sort_order"
+                            id="sort_order"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        />
+                        <p class="mt-2 text-sm text-red-600" v-if="form.errors.sort_order">{{ form.errors.sort_order }}</p>
+                    </div>
                 </div>
 
                 <div class="mt-6 flex justify-end">

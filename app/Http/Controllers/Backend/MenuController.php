@@ -16,7 +16,7 @@ class MenuController extends Controller
     {
 
         return Inertia::render('Menu/Index', [
-            'links' => Menu::all(),
+            'links' => Menu::orderBy('sort_order')->get(),
         ]);
     }
 
@@ -26,6 +26,8 @@ class MenuController extends Controller
         $request->validate([
             'name' => ['required', 'max:255'],
             'url' => ['required', 'max:255'],
+            'type' => ['required', 'max:255'],
+            'sort_order' => ['required', 'integer'],
         ]);
 
         Menu::create($request->all());
@@ -44,6 +46,8 @@ class MenuController extends Controller
             'id' => ['required'],
             'name' => ['required', 'max:255'],
             'url' => ['required', 'max:255'],
+            'type' => ['required', 'max:255'],
+            'sort_order' => ['required', 'integer'],
         ]);
 
         Menu::find($request->id)->update($request->all());
