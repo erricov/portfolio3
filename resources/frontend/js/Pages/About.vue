@@ -1,101 +1,181 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
+import { ref, onMounted } from 'vue';
 
-import Spinner from '@/Components/Spinner.vue';
-import Hero from '@/Components/Hero.vue';
+const show = ref(false);
 
-
+onMounted(() => {
+    show.value = true;
+});
 </script>
+
 <style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s;
+/* Transiciones */
+.slide-fade-enter-active {
+  transition: all 0.5s ease-out;
 }
-.fade-enter, .fade-leave-to {
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(10px);
   opacity: 0;
 }
 
-.scale-enter-active, .scale-leave-active {
-  transition: transform 1s;
+/* Estilos Generales */
+.container {
+  max-width: 1100px;
 }
-.scale-enter, .scale-leave-to {
-  transform: scale(0);
+
+h2 {
+  font-size: 2rem;
+  color: #34495e;
+}
+
+.text-muted {
+  color:#7f8c8d !important;
+}
+
+.btn-primary {
+  background-color: var(--heading-color);
+  border-color: var(--heading-color);
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/* Estilo para la imagen de perfil */
+.about-photo {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease;
+}
+.about-photo:hover {
+  transform: scale(1.1);
+}
+
+/* Tarjetas de habilidades */
+.card-custom {
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-custom:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.card-body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+.card-body p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Secciones */
+.about-section, .story-section {
+  background: #E5E7EB;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.about-section p,
+.story-section p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+.tech-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+.tech-icon:hover {
+  transform: scale(1.1);
 }
 </style>
+
 <template>
   <GuestLayout>
-    <!-- <Hero>
-      <div class="row justify-content-center">
-        <div class="col-lg-10 order-2 order-lg-1 d-flex flex-column justify-content-center text-aling-center">
-          <h1 class="text-center">SOBRE MI</h1>
-          <p class="text-center text-center fs-5"> Bienvenido a esta sección, donde podrás descubrir más sobre mi
-            trayectoria en desarrollo web, mis habilidades técnicas y la experiencia que respaldo en cada proyecto. </p>
-        </div>
-      </div>
-    </Hero> -->
-
-    
-    <!-- About Section -->
-    <Transition>
-      <section class="container my-5 about-section shadow-sm">
+    <!-- Sección Sobre Mí -->
+    <Transition name="slide-fade">
+      <section v-if="show" class="container my-5 about-section shadow-sm">
         <div class="row align-items-center">
           <div class="col-md-4 text-center">
             <transition name="scale" appear>
-              <img src="your-photo.jpg" alt="Your photo" class="about-photo rounded-circle shadow">
+              <img src="https://placehold.co/600x400" alt="Mi foto" class="about-photo rounded-circle shadow">
             </transition>
           </div>
           <div class="col-md-8">
-            <h2 class="fw-bold">Hi, I'm Ely Errico</h2>
-            <p class="text-muted">I am a web developer with experience in Full Stack solutions using Laravel and Vue.js. I specialize in developing tailored applications for clients and creating custom portfolios.</p>
-            <p class="text-muted">I love tackling challenging problems, especially in the mornings when I'm most fresh. Outside of coding, I enjoy exploring new technologies and improving my skills.</p>
-            <a href="#contact" class="btn btn-primary mt-3">Get in Touch</a>
+            <h2 class="fw-bold">Hola, soy Ely Errico</h2>
+            <p class="text-muted">Soy desarrollador web con experiencia en soluciones Full Stack utilizando Laravel y Vue.js. Me especializo en desarrollar aplicaciones a medida para clientes y en crear portafolios personalizados.</p>
+            <p class="text-muted">Disfruto resolver problemas complejos, especialmente en las mañanas cuando estoy más fresca. Fuera del código, me gusta explorar nuevas tecnologías y mejorar mis habilidades.</p>
+            <a href="#contact" class="btn btn-primary mt-3">Contáctame</a>
           </div>
         </div>
       </section>
     </Transition>
 
-    <!-- Skills Section -->
-    <transition name="fade" appear>
-      <section class="container my-5">
-        <h2 class="text-center mb-4 text-primary fw-bold">Skills</h2>
+   
+    <!-- Sección de Habilidades -->
+    <Transition name="slide-fade">
+      <section v-if="show" class="container my-5">
+        <h2 class="text-center mb-4 text-primary fw-bold">Habilidades</h2>
         <div class="row text-center">
+          <!-- Frontend -->
           <div class="col-md-4 mb-4">
             <div class="card card-custom shadow-sm border-0">
               <div class="card-body">
                 <h3>Frontend</h3>
-                <p>HTML, CSS, JavaScript, Vue.js</p>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                  <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML" class="tech-icon">
+                  <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS" class="tech-icon">
+                  <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="tech-icon">
+                  <img src="https://cdn.simpleicons.org/vue.js/4FC08D" alt="Vue.js" class="tech-icon">
+                </div>
               </div>
             </div>
           </div>
+          <!-- Backend -->
           <div class="col-md-4 mb-4">
             <div class="card card-custom shadow-sm border-0">
               <div class="card-body">
                 <h3>Backend</h3>
-                <p>PHP, Laravel, SQL/MySQL</p>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                  <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP" class="tech-icon">
+                  <img src="https://cdn.simpleicons.org/laravel/FF2D20" alt="Laravel" class="tech-icon">
+                  <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" class="tech-icon">
+                </div>
               </div>
             </div>
           </div>
+          <!-- Otras -->
           <div class="col-md-4 mb-4">
             <div class="card card-custom shadow-sm border-0">
               <div class="card-body">
-                <h3>Other</h3>
-                <p>Ubuntu, Docker, Moodle</p>
+                <h3>Otras</h3>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                  <img src="https://cdn.simpleicons.org/ubuntu/E95420" alt="Ubuntu" class="tech-icon">
+                  <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="tech-icon">
+                  <img src="https://cdn.simpleicons.org/moodle/009FE3" alt="Moodle" class="tech-icon">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </transition>
+    </Transition>
 
-
-    <!-- Story Section -->
-    <transition name="fade" appear>
-      <section class="container my-5 story-section">
-        <h2 class="text-center mb-4 text-primary fw-bold">My Story</h2>
-        <p class="text-center text-muted mx-auto" style="max-width: 800px;">I started my journey in web development a few years ago, combining my technical knowledge and passion for solving problems to create efficient solutions. Today, I focus exclusively on programming and development, working on a variety of projects for clients and continually refining my skills.</p>
+    <!-- Sección de Mi Historia -->
+    <Transition name="slide-fade">
+      <section v-if="show" class="container my-5 story-section">
+        <h2 class="text-center mb-4 text-primary fw-bold">Mi Historia</h2>
+        <p class="text-center text-muted mx-auto" style="max-width: 800px;">Comencé mi camino en el desarrollo web hace algunos años, combinando mis conocimientos técnicos y mi pasión por resolver problemas para crear soluciones eficientes. Hoy, me enfoco exclusivamente en programación y desarrollo, trabajando en diversos proyectos para clientes y perfeccionando continuamente mis habilidades.</p>
       </section>
-    </transition>
-
+    </Transition>
   </GuestLayout>
-
-  <!-- <Spinner /> -->
 </template>

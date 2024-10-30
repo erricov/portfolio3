@@ -4,9 +4,12 @@
 .header.sticky-top .scrolled {
     background-color: rgba(40, 58, 90, 0.9);
 }
-.scrolled .header .logo .logo-css {
+.header .logo .logo-css {
     color: #fff;
     border: 2px solid #fff;
+}
+.text-primary {
+    color: var(--primary-color) !important;
 }
 
 .link-header-active {
