@@ -113,7 +113,6 @@ h2 {
           <div class="col-md-8">
             <h2 class="fw-bold">Hola, soy Ely Errico</h2>
             <p class="text-muted">Soy desarrollador web con experiencia en soluciones Full Stack utilizando Laravel y Vue.js. Me especializo en desarrollar aplicaciones a medida para clientes y en crear portafolios personalizados.</p>
-            <p class="text-muted">Disfruto resolver problemas complejos, especialmente en las mañanas cuando estoy más fresca. Fuera del código, me gusta explorar nuevas tecnologías y mejorar mis habilidades.</p>
             <a href="#contact" class="btn btn-primary mt-3">Contáctame</a>
           </div>
         </div>

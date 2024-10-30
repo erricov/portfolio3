@@ -12,6 +12,9 @@ document.body.classList = '';
 // add class to body
 document.body.classList.add("index-page");
 document.body.classList.add(classes);
+
+// Set Document Title
+document.title = component + ' | Ely Errico';
 </script>
 
 <template>
