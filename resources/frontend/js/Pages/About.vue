@@ -3,10 +3,27 @@ import GuestLayout from "@/Layouts/GuestLayout.vue";
 import { ref, onMounted } from "vue";
 
 const show = ref(false);
+const showSkills1 = ref(false);
+const showSkills2 = ref(false);
+const showSkills3 = ref(false);
+const showMyStory = ref(true);
 
 onMounted(() => {
-    show.value = true;
+  show.value = true;
+  setTimeout(() => {
+    showSkills1.value = true;
+  }, 500);
+  setTimeout(() => {
+    showSkills2.value = true;
+  }, 1000);
+  setTimeout(() => {
+    showSkills3.value = true;
+  }, 1500);
+  setTimeout(() => {
+    showMyStory.value = true;
+  }, 2000);
 });
+
 </script>
 
 <style scoped>
@@ -147,7 +164,7 @@ h2 {
                     <!-- Sección de Mi Historia -->
                     <Transition name="slide-fade">
                         <div
-                            v-if="show"
+                            v-if="showMyStory"
                             class="card card-custom shadow-sm p-4 mt-4"
                         >
                             <h2 class="text-center mb-4 text-primary fw-bold">
@@ -178,7 +195,8 @@ h2 {
                             </h2>
                             <div class="row text-center">
                                 <!-- Frontend -->
-                                <div class="col-md-12 mb-4">
+                                <Transition name="slide-fade">
+                                <div class="col-md-12 mb-4" v-if="showSkills1">
                                     <div
                                         class="card card-custom shadow-sm border-0"
                                     >
@@ -211,8 +229,10 @@ h2 {
                                         </div>
                                     </div>
                                 </div>
+                                </Transition>
                                 <!-- Backend -->
-                                <div class="col-md-12 mb-4">
+                                <Transition name="slide-fade">
+                                <div class="col-md-12 mb-4" v-if="showSkills2">
                                     <div
                                         class="card card-custom shadow-sm border-0"
                                     >
@@ -240,15 +260,17 @@ h2 {
                                         </div>
                                     </div>
                                 </div>
+                                </Transition>
                                 <!-- Otras -->
-                                <div class="col-md-12 mb-4">
+                                <Transition name="slide-fade">
+                                <div class="col-md-12 mb-4" v-if="showSkills3">
                                     <div
                                         class="card card-custom shadow-sm border-0"
                                     >
                                         <div class="card-body">
                                             <h3>Otras</h3>
                                             <div
-                                                class="d-flex justify-content-center align-items-center gap-3"
+                                                class="d-flex justify-content-center align-items-center gap-3 flex-wrap"
                                             >
                                                 <img
                                                     src="https://cdn.simpleicons.org/ubuntu/E95420"
@@ -265,10 +287,41 @@ h2 {
                                                     alt="Moodle"
                                                     class="tech-icon"
                                                 />
+                                                <img
+                                                    src="https://cdn.simpleicons.org/wordpress/21759B"
+                                                    alt="WordPress"
+                                                    class="tech-icon"
+                                                />
+                                                <img
+                                                    src="https://cdn.simpleicons.org/git/F05032"
+                                                    alt="Git"
+                                                    class="tech-icon"
+                                                />
+                                                <img
+                                                    src="https://cdn.simpleicons.org/github/181717"
+                                                    alt="GitHub"
+                                                    class="tech-icon"
+                                                />
+                                                <img
+                                                    src="https://cdn.simpleicons.org/figma/F24E1E"
+                                                    alt="Figma"
+                                                    class="tech-icon"
+                                                />
+                                                <img
+                                                    src="https://cdn.simpleicons.org/adobeillustrator/FF9A00"
+                                                    alt="Illustrator"
+                                                    class="tech-icon"
+                                                />
+                                                <img
+                                                    src="https://cdn.simpleicons.org/adobephotoshop/31A8FF"
+                                                    alt="Photoshop"
+                                                    class="tech-icon"
+                                                />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                </Transition>
                             </div>
                         </div>
                     </Transition>
