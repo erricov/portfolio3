@@ -51,12 +51,20 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('scroll', toggleScrolled);
 });
+
+// if body has class page-homepage add fixed-top class to header
+var headClasses = 'header d-flex align-items-center';
+if (document.body.classList.contains('page-homepage')) {
+  headClasses += ' fixed-top';
+} else {
+  headClasses += ' sticky-top';
+}
 </script>
 
 <template>
   <!-- <pre>{{ links }}</pre> Para verificar los datos en el DOM -->
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
+  <header id="header" :class="headClasses">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">

@@ -41,9 +41,6 @@ createInertiaApp({
 });
 
 
-
-
-
  /**
    * Mobile nav toggle
    */
