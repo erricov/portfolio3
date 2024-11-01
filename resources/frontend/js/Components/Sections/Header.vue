@@ -5,29 +5,10 @@ import NavLink from '@/Components/NavLink.vue';
 
 // Reactive variables
 const siteName = 'Ely Errico';
-const links = ref([]);
 
-// Fetch links on component mount
-onMounted(() => {
-  const cachedLinks = localStorage.getItem('menuLinks');
-  
-  if (cachedLinks) {
-    links.value = JSON.parse(cachedLinks);
-    // console.log('Using cached menu links:', links.value);
-  } else {
-    axios.get('/menu-links')
-      .then((response) => {
-        links.value = response.data; // Update the value of the ref
-        localStorage.setItem('menuLinks', JSON.stringify(links.value)); // Cache the data
-        // console.log('Fetched menu links:', links.value); // Ensure this logs after data is fetched
-      })
-      .catch((error) => {
-        if (error.response && error.response.status === 404) {
-          console.error('Menu links not found (404):', error.response);
-        } else {
-          console.error('Error fetching menu links:', error);
-        }
-      });
+var props = defineProps({
+  menu: {
+    type: Array,
   }
 });
 
@@ -74,9 +55,9 @@ if (document.body.classList.contains('page-homepage')) {
       </a>
 
       <!-- Condicional para mostrar los enlaces solo cuando estén disponibles -->
-      <nav v-if="links.length" id="navmenu" class="navmenu">
+      <nav v-if="menu.length" id="navmenu" class="navmenu">
         <ul>
-          <li v-for="link in links" :key="link.id">
+          <li v-for="link in menu" :key="link.id">
             <NavLink
               v-if="link && link.url"
               :href="route(link.url)"

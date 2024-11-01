@@ -72,7 +72,7 @@ class MenuController extends Controller
 
     // send links to frontend
     public function menuLinks(){
-        $links = Menu::all();
+        $links = Menu::orderBy('sort_order')->get();
 
         return response()->json($links);
     }

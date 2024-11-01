@@ -15,12 +15,21 @@ document.body.classList.add(classes);
 
 // Set Document Title
 document.title = component + ' | Ely Errico';
+
+
+var props = defineProps({
+  menu: {
+    type: Array,
+    default: () => [],
+  }
+});
+
 </script>
 
 <template>
     <div>
         
-        <Header />
+        <Header :menu="menu" />
         <!-- Page Content -->
         <main class="main">
             <slot />
