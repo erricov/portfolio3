@@ -39,6 +39,7 @@ use Inertia\Inertia;
 
 // route group for pagecontroller
 Route::controller(PageController::class)->group(function () {
+    Route::get('/', 'homepage');
     Route::get('/homepage', 'homepage')->name('homepage');
     Route::get('/about', 'about')->name('about');
     Route::get('/services', 'services')->name('services');
