@@ -47,6 +47,15 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/contact', 'contact')->name('contact');
 });
 
+Route::post('/language', function (Illuminate\Http\Request $request) {
+    dd($request->all());
+    $locale = $request->input('locale');
+    if (in_array($locale, ['en', 'es'])) {
+        session(['locale' => $locale]);
+    }
+    return back();
+})->name('language.change');
+
 
 // Route::get('/services', function () {
 //     return Inertia::render('Services');

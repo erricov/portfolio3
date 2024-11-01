@@ -1,7 +1,8 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, getCurrentInstance } from 'vue';
 import Logo from '@img/logo.png';
 import NavLink from '@/Components/NavLink.vue';
+import LanguageSelector from '../LanguageSelector.vue';
 
 // Reactive variables
 const siteName = 'Ely Errico';
@@ -40,6 +41,19 @@ if (document.body.classList.contains('page-homepage')) {
 } else {
   headClasses += ' sticky-top';
 }
+
+
+// const changeLanguage = (lang) => {
+//   console.log('Selected language:', lang);
+
+//   Inertia.post(route('language.change'), { locale: this.selectedLanguage }, {
+//     preserveState: true, // Esto mantiene el estado de la página
+//     onSuccess: () => {
+//       location.reload(); // Recargar para aplicar el idioma
+//     },
+//   });
+// };
+
 </script>
 
 <template>
@@ -70,8 +84,60 @@ if (document.body.classList.contains('page-homepage')) {
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
+      <!-- LAnguage Selector -->
+        <!-- <div class="language-selector">
+          <select class="custom-select" @change="changeLanguage">
+            <option value="es">
+              <img :src="flags.es" alt="Flag" class="flag-icon" />
+            </option>
+            <option value="en">EN</option>
+            <option value="it">IT</option>
+          </select>
+          <img :src="flagUrl" alt="Flag" class="flag-icon" />
+        </div> -->
+        <div class="ms-3 d-flex">
+
+          <LanguageSelector />
+        </div>
+
       <!-- <a class="btn-getstarted" href="#about">Get Started</a> -->
 
     </div>
   </header>
 </template>
+
+
+<style scoped>
+/* .language-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.custom-select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  background-image: url('path/to/arrow-down-icon.png');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.custom-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.flag-icon {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+  vertical-align: middle;
+} */
+</style>

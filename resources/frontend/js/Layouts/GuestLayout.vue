@@ -3,6 +3,7 @@ import Header from '../Components/Sections/Header.vue';
 import Footer from '../Components/Sections/Footer.vue';
 
 import { usePage } from '@inertiajs/vue3';
+import { defineProps, getCurrentInstance } from 'vue';
 const { component } = usePage();
 const classes = "page-" + component.toLowerCase();
 
@@ -23,6 +24,7 @@ var props = defineProps({
     default: () => [],
   }
 });
+
 
 </script>
 
