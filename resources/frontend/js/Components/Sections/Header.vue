@@ -74,34 +74,19 @@ if (document.body.classList.contains('page-homepage')) {
           <li v-for="link in menu" :key="link.id">
             <NavLink
               v-if="link && link.url"
-              :href="route(link.url)"
-              :active="route().current(link.url)"
-            >
-              {{ link.name }}
+                :href="route(link.url)"
+                :active="route().current(link.url)"
+              >
+                {{ $t('header.' + link.url.toLowerCase()) }}
+              <!-- {{ link.name }} -->
             </NavLink>
           </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <!-- LAnguage Selector -->
-        <!-- <div class="language-selector">
-          <select class="custom-select" @change="changeLanguage">
-            <option value="es">
-              <img :src="flags.es" alt="Flag" class="flag-icon" />
-            </option>
-            <option value="en">EN</option>
-            <option value="it">IT</option>
-          </select>
-          <img :src="flagUrl" alt="Flag" class="flag-icon" />
-        </div> -->
         <div class="ms-3 d-flex">
-
           <LanguageSelector />
         </div>
-
-      <!-- <a class="btn-getstarted" href="#about">Get Started</a> -->
-
     </div>
   </header>
 </template>

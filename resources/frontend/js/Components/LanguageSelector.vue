@@ -1,16 +1,16 @@
 <template>
-    <div class="dropdown">
-        <button class="dropdown-toggle" @click="toggleDropdown">
-            <img :src="selectedFlag" alt="Selected Flag" class="flag-icon" />
-        </button>
-        <div :class="['dropdown-menu', { 'dropdown-menu-open': isOpen }]">
-            <div
-                v-for="(flag, lang) in flags"
-                :key="lang"
-                @click="selectLanguage(lang)"
-                class="dropdown-item"
-            >
-                <img :src="flag" :alt="lang" class="flag-icon" />
+    <div class="locale-changer">
+        <div class="dropdown">
+            <button class="dropdown-toggle">
+                <img :src="flags[$i18n.locale]" class="flag-icon" />
+            </button>
+            <div class="dropdown-menu">
+            <div v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" class="dropdown-item" @click="$i18n.locale = locale">
+                <img :src="flags[locale]" class="flag-icon" /> 
+                <div class="locale-name ">
+                    - {{ locale }}
+                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -18,42 +18,23 @@
 
 <script setup>
 import { ref, reactive, onMounted, getCurrentInstance } from "vue";
-// import axios from "axios";
-import axios from "axios";
 
-const isOpen = ref(false);
-const selectedFlag = ref("");
 const flags = reactive({
     es: "https://flagcdn.com/w20/es.png",
     en: "https://flagcdn.com/w20/us.png",
     it: "https://flagcdn.com/w20/it.png",
 });
 
+// const $i18n = getCurrentInstance().appContext.config.globalProperties.$i18n;
+
 onMounted(() => {
-    selectedFlag.value = flags.es;
+    let dropdown = document.querySelector(".dropdown");
+    dropdown.addEventListener("click", (e) => {
+        dropdown.querySelector(".dropdown-menu").classList.toggle("dropdown-menu-open");
+    });
 });
 
-const toggleDropdown = () => {
-    isOpen.value = !isOpen.value;
-};
 
-const { emit } = getCurrentInstance();
-
-// const selectedLanguage = ref("es");
-const selectLanguage = (lang) => {
-    selectedFlag.value = flags[lang];
-    isOpen.value = false;
-    
-    console.log('Selected language:', lang);
-
-    axios.post(route('language.change'), { locale: lang }, {
-        preserveState: true, // Esto mantiene el estado de la página
-        onSuccess: () => {
-            location.reload(); // Recargar para aplicar el idioma
-        },
-    });
-
-};
 
 </script>
 
@@ -92,7 +73,7 @@ const selectLanguage = (lang) => {
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
     transform: translateY(-10px);
-    width: 50px;
+    width: 80px;
     min-width: unset!important;
 }
 
@@ -106,6 +87,20 @@ const selectLanguage = (lang) => {
     padding: 0px 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.locale-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #333;
+    width: 20px;
 }
 
 .dropdown-item:hover {

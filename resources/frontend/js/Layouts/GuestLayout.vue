@@ -30,7 +30,6 @@ var props = defineProps({
 
 <template>
     <div>
-        
         <Header :menu="menu" />
         <!-- Page Content -->
         <main class="main">

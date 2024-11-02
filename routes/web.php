@@ -48,9 +48,9 @@ Route::controller(PageController::class)->group(function () {
 });
 
 Route::post('/language', function (Illuminate\Http\Request $request) {
-    dd($request->all());
+    // dd($request->all());
     $locale = $request->input('locale');
-    if (in_array($locale, ['en', 'es'])) {
+    if (in_array($locale, ['en', 'es', 'it'])) {
         session(['locale' => $locale]);
     }
     return back();

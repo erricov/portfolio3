@@ -17,10 +17,54 @@ import 'glightbox/dist/js/glightbox';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
+import { createI18n } from 'vue-i18n'
 import { ZiggyVue } from '../../../vendor/tightenco/ziggy';
 
 // const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+
+const i18n = createI18n({
+  locale: 'es',
+  fallbackLocale: 'en',
+  messages: {
+    en: {
+      header: {
+        homepage: 'Home',
+        about: 'About',
+        services: 'Services',
+        portfolio: 'Portfolio',
+        contact: 'Contact',
+      },
+      message: {
+        hello: 'hello world',
+      },
+    },
+    es: {
+      header: {
+        homepage: 'Inicio',
+        about: 'Acerca de mi',
+        services: 'Servicios',
+        portfolio: 'Portafolio',
+        contact: 'Contacto',
+      },
+      message: {
+        hello: 'Hola Mundo',
+      },
+    },
+    it: {
+      header: {
+        homepage: 'Pagina Iniziale',
+        about: 'Chi Sono',
+        services: 'Servizi',
+        portfolio: 'Portfolio',
+        contact: 'Contatti',
+      },
+      message: {
+        hello: 'Ciao Mondo',
+      },
+    },
+  },
+});
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -33,25 +77,13 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(i18n)
             .mount(el);
     },
     progress: {
         color: '#4B5563',
     },
 });
-
-
- /**
-   * Mobile nav toggle
-   */
-//  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-//  function mobileNavToogle() {
-//    document.querySelector('body').classList.toggle('mobile-nav-active');
-//    mobileNavToggleBtn.classList.toggle('bi-list');
-//    mobileNavToggleBtn.classList.toggle('bi-x');
-//  }
-//  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
  /**
   * Hide mobile nav on same-page/hash links
@@ -76,15 +108,5 @@ createInertiaApp({
      e.stopImmediatePropagation();
    });
  });
-
- /**
-  * Preloader
-//   */
-//  if (preloader) {
-//    window.addEventListener('load', () => {
-//      preloader.remove();
-//    });
-//  }
-
 
 
