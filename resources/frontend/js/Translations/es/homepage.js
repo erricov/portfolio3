@@ -59,7 +59,7 @@ export default {
         questions: [
             {
                 question: "¿Cómo garantizo la calidad en cada proyecto?",
-                answer: "Mantenemos una metodología basada en pruebas y revisiones constantes para asegurar que cada aspecto de la aplicación funcione de forma óptima y esté alineado con tus objetivos.",
+                answer: "Mantengo una metodología basada en pruebas y revisiones constantes para asegurar que cada aspecto de la aplicación funcione de forma óptima y esté alineado con tus objetivos.",
             },
             {
                 question:
@@ -80,6 +80,8 @@ export default {
     },
     faq: {
         title: "Preguntas Frecuentes",
+        description:
+            "Respuestas a las preguntas más comunes sobre el desarrollo de aplicaciones web y mis servicios.",
         questions: [
             {
                 question:

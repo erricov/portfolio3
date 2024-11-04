@@ -5,8 +5,10 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Contacto</h2>
-            <p>¿Tienes alguna pregunta o deseas solicitar un presupuesto? Ponte en contacto conmigo</p>
+            <h2>{{ $t('homepage.contact.title') }} </h2>
+            <p>
+                {{ $t('homepage.contact.description') }}
+            </p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -19,7 +21,7 @@
                         <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                             <i class="bi bi-geo-alt flex-shrink-0"></i>
                             <div>
-                                <h3>Direccion</h3>
+                                <h3>{{ $t('homepage.contact.address') }}</h3>
                                 <p>Via Gioacchino Murat 126, 70123 Bari, Italia</p>
                             </div>
                         </div><!-- End Info Item -->
@@ -27,7 +29,7 @@
                         <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                             <i class="bi bi-telephone flex-shrink-0"></i>
                             <div>
-                                <h3>Teléfono</h3>
+                                <h3>{{ $t('homepage.contact.phone') }}</h3>
                                 <p>+39 392 523 8575</p>
                             </div>
                         </div><!-- End Info Item -->
@@ -35,7 +37,7 @@
                         <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                             <i class="bi bi-envelope flex-shrink-0"></i>
                             <div>
-                                <h3>Correo</h3>
+                                <h3>{{ $t('homepage.contact.email') }}</h3>
                                 <p>elyerrico@gmail.com</p>
                             </div>
                         </div><!-- End Info Item -->
@@ -53,22 +55,22 @@
                         <div class="row gy-4">
 
                             <div class="col-md-6">
-                                <label for="name-field" class="pb-2">Your Name</label>
+                                <label for="name-field" class="pb-2">{{ $t('homepage.contact.form.name') }}</label>
                                 <input type="text" name="name" id="name-field" class="form-control" required="">
                             </div>
 
                             <div class="col-md-6">
-                                <label for="email-field" class="pb-2">Your Email</label>
+                                <label for="email-field" class="pb-2">{{ $t('homepage.contact.form.email') }}</label>
                                 <input type="email" class="form-control" name="email" id="email-field" required="">
                             </div>
 
                             <div class="col-md-12">
-                                <label for="subject-field" class="pb-2">Subject</label>
+                                <label for="subject-field" class="pb-2">{{ $t('homepage.contact.form.subject') }}</label>
                                 <input type="text" class="form-control" name="subject" id="subject-field" required="">
                             </div>
 
                             <div class="col-md-12">
-                                <label for="message-field" class="pb-2">Message</label>
+                                <label for="message-field" class="pb-2">{{ $t('homepage.contact.form.message') }}</label>
                                 <textarea class="form-control" name="message" rows="10" id="message-field"
                                     required=""></textarea>
                             </div>
@@ -78,7 +80,7 @@
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                                <button type="submit">Send Message</button>
+                                <button type="submit">{{ $t('homepage.contact.form.sendButton') }}</button> 
                             </div>
 
                         </div>

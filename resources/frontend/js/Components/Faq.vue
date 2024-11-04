@@ -3,10 +3,9 @@
     <section id="faq-2" class="faq-2 section light-background">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Preguntas Frecuentes</h2>
+            <h2>{{ $t('homepage.faq.title') }} </h2>
             <p>
-                ¿Tienes alguna duda? Aquí encontrarás las respuestas a las
-                preguntas más frecuentes
+                {{ $t('homepage.faq.description') }}
             </p>
         </div>
         <!-- End Section Title -->
@@ -22,15 +21,11 @@
                         >
                             <i class="faq-icon bi bi-question-circle"></i>
                             <h3>
-                                ¿Cuál es el tiempo estimado de desarrollo de una
-                                aplicación web?
+                                {{ $t('homepage.faq.questions[0].question') }}
                             </h3>
                             <div class="faq-content">
                                 <p>
-                                    El tiempo de desarrollo de una aplicación
-                                    web depende de la complejidad del proyecto.
-                                    En general, el tiempo estimado de desarrollo
-                                    de una aplicación web es de 2 a 6 semanas.
+                                    {{ $t('homepage.faq.questions[0].answer') }}
                                 </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
@@ -44,14 +39,11 @@
                         >
                             <i class="faq-icon bi bi-question-circle"></i>
                             <h3>
-                                ¿Ofreces soporte después de finalizar el
-                                proyecto?
+                                {{ $t('homepage.faq.questions[1].question') }}
                             </h3>
                             <div class="faq-content">
                                 <p>
-                                    Sí, ofrezco soporte técnico y mantenimiento
-                                    para asegurar el buen funcionamiento de las
-                                    soluciones entregadas.
+                                    {{ $t('homepage.faq.questions[1].answer') }}
                                 </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
@@ -65,15 +57,11 @@
                         >
                             <i class="faq-icon bi bi-question-circle"></i>
                             <h3>
-                                ¿Cuál es el costo de desarrollo de una
-                                aplicación web?
+                                {{ $t('homepage.faq.questions[2].question') }}
                             </h3>
                             <div class="faq-content">
                                 <p>
-                                    El costo de desarrollo de una aplicación web
-                                    depende de la complejidad del proyecto. Para
-                                    obtener un presupuesto personalizado, por
-                                    favor, ponte en contacto conmigo.
+                                    {{ $t('homepage.faq.questions[2].answer') }}
                                 </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
@@ -87,15 +75,11 @@
                         >
                             <i class="faq-icon bi bi-question-circle"></i>
                             <h3>
-                                ¿Qué tecnologías utilizas para el desarrollo de
-                                aplicaciones web?
+                                {{ $t('homepage.faq.questions[3].question') }}
                             </h3>
                             <div class="faq-content">
                                 <p>
-                                    Utilizo tecnologías modernas y de última
-                                    generación para el desarrollo de
-                                    aplicaciones web, como HTML5, CSS3,
-                                    JavaScript, PHP, MySQL, entre otras.
+                                    {{ $t('homepage.faq.questions[3].answer') }}
                                 </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
@@ -109,16 +93,11 @@
                         >
                             <i class="faq-icon bi bi-question-circle"></i>
                             <h3>
-                                ¿Cómo puedo solicitar un presupuesto para el
-                                desarrollo de una aplicación web?
+                                {{ $t('homepage.faq.questions[4].question') }}
                             </h3>
                             <div class="faq-content">
                                 <p>
-                                    Para solicitar un presupuesto para el
-                                    desarrollo de una aplicación web, por favor,
-                                    ponte en contacto conmigo a través del
-                                    formulario de contacto o enviando un correo
-                                    electrónico a elyerrico@gmail.com
+                                    {{ $t('homepage.faq.questions[4].answer') }}
                                 </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>

@@ -79,6 +79,7 @@ export default {
     },
     faq: {
         title: "Frequently Asked Questions",
+        description: "Have a question? Check out some of the most common inquiries.",
         questions: [
             {
                 question:

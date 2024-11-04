@@ -6,46 +6,38 @@
             <div class="row gy-4">
                 <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
                     <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
-                        <h3><span>¿Por qué trabajar conmigo?</span></h3>
+                        <h3><span>{{ $t('homepage.whyWorkWithMe.title') }}</span></h3>
                         <p>
-                            Con años de experiencia en desarrollo Full Stack, ofrezco un enfoque personalizado para cada
-                            proyecto. Mi misión es construir aplicaciones web a la medida, manteniendo altos estándares
-                            de calidad y rendimiento para satisfacer las necesidades específicas de cada cliente.
+                            {{ $t('homepage.whyWorkWithMe.description') }}
                         </p>
                     </div>
 
                     <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
                         <div class="faq-item faq-active">
-                            <h3><span>01</span> ¿Cómo garantizo la calidad en cada proyecto?</h3>
+                            <h3><span>01</span> {{ $t('homepage.whyWorkWithMe.questions[0].question') }}</h3>
                             <div class="faq-content">
                                 <p>
-                                    Mantengo una metodología basada en pruebas y revisiones constantes para asegurar que
-                                    cada aspecto de la aplicación funcione de forma óptima y esté alineado con tus
-                                    objetivos.
+                                    {{ $t('homepage.whyWorkWithMe.questions[0].answer') }}
                                 </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item">
-                            <h3><span>02</span> ¿Cuál es mi enfoque hacia el diseño y la funcionalidad?</h3>
+                            <h3><span>02</span> {{ $t('homepage.whyWorkWithMe.questions[1].question') }}</h3>
                             <div class="faq-content">
                                 <p>
-                                    Creo que el diseño debe ir de la mano con la funcionalidad. Trabajo para crear
-                                    interfaces intuitivas y atractivas, que no solo destaquen visualmente, sino que
-                                    también sean prácticas y eficientes.
+                                    {{ $t('homepage.whyWorkWithMe.questions[1].answer') }}
                                 </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>
                         </div><!-- End Faq item-->
 
                         <div class="faq-item">
-                            <h3><span>03</span> ¿Qué tecnologías utilizo?</h3>
+                            <h3><span>03</span> {{ $t('homepage.whyWorkWithMe.questions[2].question') }}</h3>
                             <div class="faq-content">
                                 <p>
-                                    Uso tecnologías modernas como Laravel y Vue.js para construir aplicaciones robustas
-                                    y escalables, ideales para adaptarse al crecimiento de tu negocio en el mundo
-                                    digital.
+                                    {{ $t('homepage.whyWorkWithMe.questions[2].answer') }}
                                 </p>
                             </div>
                             <i class="faq-toggle bi bi-chevron-right"></i>

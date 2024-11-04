@@ -80,6 +80,7 @@ export default {
     },
     faq: {
         title: "Domande Frequenti",
+        description: "Hai domande? Ecco alcune risposte alle domande più frequenti.",
         questions: [
             {
                 question:
