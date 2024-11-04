@@ -17,54 +17,11 @@ import 'glightbox/dist/js/glightbox';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
-import { createI18n } from 'vue-i18n'
+import i18n from './i18n';
 import { ZiggyVue } from '../../../vendor/tightenco/ziggy';
 
 // const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
-
-const i18n = createI18n({
-  locale: 'es',
-  fallbackLocale: 'en',
-  messages: {
-    en: {
-      header: {
-        homepage: 'Home',
-        about: 'About',
-        services: 'Services',
-        portfolio: 'Portfolio',
-        contact: 'Contact',
-      },
-      message: {
-        hello: 'hello world',
-      },
-    },
-    es: {
-      header: {
-        homepage: 'Inicio',
-        about: 'Acerca de mi',
-        services: 'Servicios',
-        portfolio: 'Portafolio',
-        contact: 'Contacto',
-      },
-      message: {
-        hello: 'Hola Mundo',
-      },
-    },
-    it: {
-      header: {
-        homepage: 'Pagina Iniziale',
-        about: 'Chi Sono',
-        services: 'Servizi',
-        portfolio: 'Portfolio',
-        contact: 'Contatti',
-      },
-      message: {
-        hello: 'Ciao Mondo',
-      },
-    },
-  },
-});
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

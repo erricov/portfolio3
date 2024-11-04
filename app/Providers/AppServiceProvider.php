@@ -22,8 +22,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Vite::prefetch(concurrency: 3);
-        Inertia::share('locale', function () {
-            return app()->getLocale();
-        });
     }
 }

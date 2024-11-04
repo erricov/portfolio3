@@ -18,25 +18,6 @@ use Inertia\Inertia;
     
 // });
 
-// Route::get('/', function () {
-//     return Inertia::render('Homepage',
-//     [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]
-// );
-// });
-
-// Route::get('/about', function () {
-//     return Inertia::render('About');
-// })->name('about');
-
-// Route::get('/homepage', function () {
-//     return Inertia::render('Homepage');
-// })->name('homepage');
-
 // route group for pagecontroller
 Route::controller(PageController::class)->group(function () {
     Route::get('/', 'homepage');
@@ -47,27 +28,6 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/contact', 'contact')->name('contact');
 });
 
-Route::post('/language', function (Illuminate\Http\Request $request) {
-    // dd($request->all());
-    $locale = $request->input('locale');
-    if (in_array($locale, ['en', 'es', 'it'])) {
-        session(['locale' => $locale]);
-    }
-    return back();
-})->name('language.change');
-
-
-// Route::get('/services', function () {
-//     return Inertia::render('Services');
-// })->name('services');
-
-// Route::get('/portfolio', function () {
-//     return Inertia::render('portfolio');
-// })->name('portfolio');
-
-// Route::get('/contact', function () {
-//     return Inertia::render('Contact');
-// })->name('contact');
 
 // BACKEND
 Route::get('/menu-links', [MenuController::class, 'menuLinks'])->name('menu.menuLinks');

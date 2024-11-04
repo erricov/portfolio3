@@ -10,10 +10,9 @@
                 </div>
 
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3>Transformo tus ideas en aplicaciones de alto rendimiento</h3>
+                    <h3> {{ $t('homepage.skills.title') }} </h3>
                     <p class="fst-italic">
-                        Mi enfoque es construir soluciones digitales que impulsen a las empresas, combinando tecnología
-                        de vanguardia y una implementación personalizada.
+                       {{ $t('homepage.skills.subtitle') }}
                     </p>
 
                     <div class="skills-content skills-animation">
