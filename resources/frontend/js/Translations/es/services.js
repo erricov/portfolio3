@@ -1,5 +1,5 @@
 export default {
-    services: {
+    
         title: "Servicios que ofrezco",
         description: "Como desarrollador web Full Stack, me especializo en construir aplicaciones personalizadas, optimizar sistemas existentes y mejorar la experiencia del usuario mediante tecnologías modernas. A continuación, puedes conocer más sobre mis principales servicios.",
         service1: {
@@ -51,5 +51,4 @@ export default {
                 answer: "Sí, ofrezco soporte post-lanzamiento para asegurar que todo funcione correctamente y realizar ajustes necesarios según el feedback de los usuarios."
             }
         }
-    }
 };
