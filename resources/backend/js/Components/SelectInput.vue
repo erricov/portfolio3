@@ -1,37 +1,37 @@
 <script setup>
-import { onMounted, ref } from "vue";
-
-const model = defineModel({
-    type: String,
-    required: true,
-});
+import { ref, watch } from "vue";
 
 const props = defineProps({
-    options: {
-        type: Array,
-        required: true,
+    modelValue: {
+        type: String,
+        default: "",
     },
 });
 
-const input = ref(null);
+const emit = defineEmits(["update:modelValue"]);
 
-// onMounted(() => {
-//     if (input.value.hasAttribute("autofocus")) {
-//         input.value.focus();
-//     }
-// });
+const model = ref(props.modelValue);
 
-defineExpose({ focus: () => input.value.focus() });
+// Sincronizar el valor del modelo con el valor del prop `modelValue`
+watch(
+    () => props.modelValue,
+    (newValue) => {
+        model.value = newValue;
+    }
+);
+
+// Emitir los cambios de `model` hacia el `v-model` en el padre
+watch(model, (newValue) => {
+    emit("update:modelValue", newValue);
+});
 </script>
 
 <template>
     <select
-        id="type"
         v-model="model"
+        id="type"
         class="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
     >
-        <option v-for="option in options" :key="option.value" :value="option.value">
-            {{ option.label }}
-        </option>
+        <slot></slot>
     </select>
 </template>

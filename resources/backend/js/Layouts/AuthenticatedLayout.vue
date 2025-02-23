@@ -45,15 +45,15 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Menu
                                 </NavLink>
-                                <NavLink
+                                <!-- <NavLink
                                     :href="route('menu.edit')"
                                     :active="route().current('menu.edit')"
                                 >
                                     Pages
-                                </NavLink>
+                                </NavLink> -->
                                 <NavLink
-                                    :href="route('menu.edit')"
-                                    :active="route().current('menu.edit')"
+                                    :href="route('language.edit')"
+                                    :active="route().current('language.edit')"
                                 >
                                     Languages
                                 </NavLink>

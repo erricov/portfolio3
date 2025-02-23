@@ -16,23 +16,25 @@ class LanguageController extends Controller
     {
 
         return Inertia::render('Language/Index', [
-            'links' => Language::orderBy('sort_order')->get(),
+            'items' => Language::orderBy('sort_order')->get(),
         ]);
     }
 
     // Store the Language items
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'name' => ['required', 'max:255'],
-            'url' => ['required', 'max:255'],
-            'type' => ['required', 'max:255'],
-            'sort_order' => ['required', 'integer'],
+            'code' => ['required', 'max:2'],
+            'is_rtl' => ['required'],
+            'is_default' => ['required'],
+            'is_enabled' => ['required'],
         ]);
 
         Language::create($request->all());
 
-        return Redirect::route('Language.edit');
+        return Redirect::route('language.edit');
 
     }
 
@@ -43,16 +45,16 @@ class LanguageController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'id' => ['required'],
             'name' => ['required', 'max:255'],
-            'url' => ['required', 'max:255'],
-            'type' => ['required', 'max:255'],
-            'sort_order' => ['required', 'integer'],
+            'code' => ['required', 'max:2'],
+            'is_rtl' => ['required'],
+            'is_default' => ['required'],
+            'is_enabled' => ['required'],
         ]);
 
         Language::find($request->id)->update($request->all());
 
-        return Redirect::route('Language.edit');
+        return Redirect::route('language.edit');
     }
 
     /**
@@ -67,13 +69,7 @@ class LanguageController extends Controller
 
         Language::find($request->id)->delete();
 
-        return Redirect::route('Language.edit');
+        return Redirect::route('language.edit');
     }
 
-    // send links to frontend
-    public function LanguageLinks(){
-        $links = Language::orderBy('sort_order')->get();
-
-        return response()->json($links);
-    }
 }

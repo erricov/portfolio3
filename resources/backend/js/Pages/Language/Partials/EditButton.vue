@@ -6,7 +6,7 @@ import Modal from "@backend/Components/Modal.vue";
 import SecondaryButton from "@backend/Components/SecondaryButton.vue";
 
 defineProps({
-    link: {
+    item: {
         type: Object,
         required: true,
     },
@@ -22,12 +22,12 @@ const form = useForm({
 
 const openModal = ref(false);
 
-const openingModal = (link) => {
-    form.id = link.id;
-    form.name = link.name;
-    form.url = link.url;
-    form.type = link.type;
-    form.sort_order = link.sort_order;
+const openingModal = (item) => {
+    form.id = item.id;
+    form.name = item.name;
+    form.url = item.url;
+    form.type = item.type;
+    form.sort_order = item.sort_order;
     openModal.value = true;
 };
 
@@ -37,7 +37,7 @@ const closeModal = () => {
     form.reset();
 };
 
-const updateLink = () => {
+const updateItem = () => {
     form.put(route("menu.update"), {
         preserveScroll: true,
         onSuccess: () => closeModal(),
@@ -48,7 +48,7 @@ const updateLink = () => {
 <template>
     <button
         class="bg-blue-500 text-white px-1 py-0.5 rounded hover:bg-blue-600 text-sm"
-        @click="openingModal(link)"
+        @click="openingModal(item)"
     >
         Edit
     </button>
@@ -57,10 +57,10 @@ const updateLink = () => {
     <Modal :show="openModal" @close="closeModal">
         <div class="p-6">
             <h2 class="text-lg font-medium text-gray-900">
-                Edit Link
+                Edit Item
             </h2>
 
-            <form @submit.prevent="updateLink" class="mt-6">
+            <form @submit.prevent="updateItem" class="mt-6">
                 <div class="mt-6">
                     <label for="name" class="block text-sm font-medium text-gray-700">
                         Name

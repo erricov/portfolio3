@@ -1,9 +1,9 @@
 <script setup>
-import DeleteLink from "./DeleteLink.vue";
-import EditLink from "./EditLink.vue";
+import DeleteButton from "./DeleteButton.vue";
+import EditButton from "./EditButton.vue";
 
 defineProps({
-    links: {
+    items: {
         type: Array,
         required: true,
     }
@@ -15,23 +15,23 @@ defineProps({
 <template>
     <div>
         <div class="bg-white rounded-lg shadow p-4">
-            <div v-if="!links.length">
-                <p class="text-gray-600">No links found.</p>
+            <div v-if="!items.length">
+                <p class="text-gray-600">No items found.</p>
             </div>
 
             <ul class="list-disc pl-5 space-y-2">
                 <li
-                    v-for="link in links"
-                    :key="link.id"
+                    v-for="item in items"
+                    :key="item.id"
                     class="flex justify-between items-center text-gray-600"
                 >
                     <span class="flex-1">
-                        {{ link.name }}
+                        {{ item.name }}
                     </span>
 
 
-                    <EditLink :link="link" />
-                    <DeleteLink :link="link" />
+                    <EditButton :item="item" />
+                    <DeleteButton :item="item" />
                 </li>
             </ul>
         </div>

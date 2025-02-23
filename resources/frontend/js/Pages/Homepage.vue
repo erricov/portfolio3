@@ -48,7 +48,7 @@ var props = defineProps({
 
     <Services />
 
-    <Skills />
+    <Skills class="d-none" />
 
     <WhyUs />
 

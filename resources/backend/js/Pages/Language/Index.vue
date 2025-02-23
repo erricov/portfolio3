@@ -1,13 +1,12 @@
 <script setup>
 import AuthenticatedLayout from '@backend/Layouts/AuthenticatedLayout.vue';
-import ListLinks from './Partials/ListLinks.vue';
-import AddlinkForm from './Partials/AddlinkForm.vue';
-// import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
+import ListItems from './Partials/ListItems.vue';
+import AddForm from './Partials/AddForm.vue';
 import { Head } from '@inertiajs/vue3';
 
 
 defineProps({
-    links: {
+    items: {
         type: Array,
         required: true,
     },
@@ -17,14 +16,14 @@ defineProps({
 
 
 <template>
-    <Head title="Menu" />
+    <Head title="Languages" />
 
     <AuthenticatedLayout>
         <template #header>
             <h2
                 class="text-xl font-semibold leading-tight text-gray-800"
             >
-                Menu
+                Languages
             </h2>
         </template>
 
@@ -32,10 +31,10 @@ defineProps({
             <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
                 <!-- grid 3 columns -->
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
-                    <!-- List links -->
-                    <ListLinks :links="links" />
+                    <!-- List items -->
+                    <ListItems :items="items" />
                     <!-- Add box -->
-                    <AddlinkForm />
+                    <AddForm :addRoute="'language.store'" />
                 </div>
             </div>
         </div>
