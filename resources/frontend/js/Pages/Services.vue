@@ -46,10 +46,10 @@ onMounted(() => {
                     <Transition name="slide-fade">
                         <div v-if="show" class="card card-custom shadow-sm p-4">
                             <h2 class="text-primary fw-bold">
-                                Servicios que ofrezco
+                                {{ $t('services.title') }}
                             </h2>
                             <p class="text-muted">
-                                Como desarrollador web Full Stack, me especializo en construir aplicaciones personalizadas, optimizar sistemas existentes y mejorar la experiencia del usuario mediante tecnologías modernas. A continuación, puedes conocer más sobre mis principales servicios.
+                                {{ $t('services.description') }}
                             </p>
                         </div>
                     </Transition>
@@ -57,14 +57,14 @@ onMounted(() => {
                     <!-- Servicio 1: Desarrollo de Aplicaciones a Medida -->
                     <Transition name="slide-fade">
                         <div v-if="showService1" class="card card-custom shadow-sm p-4 mt-4">
-                            <h3 class="fw-bold">Desarrollo de Aplicaciones a Medida</h3>
+                            <h3 class="fw-bold">{{ $t('services.service1.title') }}</h3>
                             <p class="text-muted">
-                                Desarrollo aplicaciones a medida utilizando Laravel y Vue.js, enfocadas en eficiencia, escalabilidad y rendimiento. Cada aplicación está diseñada para satisfacer necesidades específicas del cliente, ya sea un sistema de gestión de inventarios, un portal de usuarios, o cualquier otra solución.
+                                {{ $t('services.service1.description') }}
                             </p>
                             <ul>
-                                <li>Diseño de interfaces de usuario interactivas y atractivas.</li>
-                                <li>Optimización de la base de datos para un rendimiento óptimo.</li>
-                                <li>Integración de funciones avanzadas como autenticación, notificaciones en tiempo real, y API REST.</li>
+                                <li>{{ $t('services.service1.points[0]') }}</li>
+                                <li>{{ $t('services.service1.points[1]') }}</li>
+                                <li>{{ $t('services.service1.points[2]') }}</li>
                             </ul>
                         </div>
                     </Transition>
@@ -72,14 +72,14 @@ onMounted(() => {
                     <!-- Servicio 2: Integración de Sistemas -->
                     <Transition name="slide-fade">
                         <div v-if="showService2" class="card card-custom shadow-sm p-4 mt-4">
-                            <h3 class="fw-bold">Integración de Sistemas</h3>
+                            <h3 class="fw-bold">{{ $t('services.service2.title') }}</h3>
                             <p class="text-muted">
-                                Con la creciente necesidad de automatización y eficiencia, ofrezco servicios de integración que permiten conectar distintos sistemas y aplicaciones. Realizo integraciones de APIs, ERP y plataformas e-commerce, creando un flujo de trabajo sin interrupciones entre tus sistemas.
+                                {{ $t('services.service2.description') }}
                             </p>
                             <ul>
-                                <li>Integración de API de terceros (Stripe, Paypal, Google Maps, etc.).</li>
-                                <li>Conexión de sistemas CRM, ERP y otros sistemas empresariales.</li>
-                                <li>Automatización de procesos y flujo de datos entre plataformas.</li>
+                                <li>{{ $t('services.service2.points[0]') }}</li>
+                                <li>{{ $t('services.service2.points[1]') }}</li>
+                                <li>{{ $t('services.service2.points[2]') }}</li>
                             </ul>
                         </div>
                     </Transition>
@@ -87,14 +87,14 @@ onMounted(() => {
                     <!-- Servicio 3: Diseño y Desarrollo de Portafolios -->
                     <Transition name="slide-fade">
                         <div v-if="showService3" class="card card-custom shadow-sm p-4 mt-4">
-                            <h3 class="fw-bold">Diseño y Desarrollo de Portafolios</h3>
+                            <h3 class="fw-bold">{{ $t('services.service3.title') }}</h3>
                             <p class="text-muted">
-                                Un portafolio es esencial para destacar tus habilidades y proyectos. Ofrezco servicios de diseño y desarrollo de portafolios, creando sitios web modernos, visualmente atractivos y totalmente responsivos que reflejan tu marca personal o profesional.
+                                {{ $t('services.service3.description') }}
                             </p>
                             <ul>
-                                <li>Diseño de UI/UX centrado en la experiencia del usuario.</li>
-                                <li>Adaptación a dispositivos móviles para una visualización óptima en todas las pantallas.</li>
-                                <li>Integración de animaciones y efectos visuales para un portafolio dinámico.</li>
+                                <li>{{ $t('services.service3.points[0]') }}</li>
+                                <li>{{ $t('services.service3.points[1]') }}</li>
+                                <li>{{ $t('services.service3.points[2]') }}</li>
                             </ul>
                         </div>
                     </Transition>
@@ -105,15 +105,15 @@ onMounted(() => {
                     <!-- Testimonios -->
                     <Transition name="slide-fade">
                         <div v-if="showTestimonials" class="testimonials-section">
-                            <h2 class="text-center text-primary fw-bold mb-3">Testimonios</h2>
+                            <h2 class="text-center text-primary fw-bold mb-3">{{ $t('services.testimonials.title') }}</h2>
                             
                             <!-- Testimonio 1 -->
                             <div class="card card-custom shadow-sm mb-4">
                                 <div class="card-body">
                                     <p class="text-muted fst-italic">
-                                        "Trabajar con Ely ha sido una excelente experiencia. Su habilidad para entender nuestros requisitos y desarrollar una solución personalizada ha sido clave para nuestro éxito."
+                                        {{ $t('services.testimonials.testimonial1.text') }}
                                     </p>
-                                    <h6 class="fw-bold text-end">- Juan Pérez, CEO de Empresa X</h6>
+                                    <h6 class="fw-bold text-end">{{ $t('services.testimonials.testimonial1.author') }}</h6>
                                 </div>
                             </div>
 
@@ -121,9 +121,9 @@ onMounted(() => {
                             <div class="card card-custom shadow-sm mb-4">
                                 <div class="card-body">
                                     <p class="text-muted fst-italic">
-                                        "Ely superó nuestras expectativas. Su atención al detalle y su conocimiento técnico nos ayudaron a lanzar nuestro proyecto en tiempo récord."
+                                        {{ $t('services.testimonials.testimonial2.text') }}
                                     </p>
-                                    <h6 class="fw-bold text-end">- María López, Directora de Proyectos en Innovatech</h6>
+                                    <h6 class="fw-bold text-end">{{ $t('services.testimonials.testimonial2.author') }}</h6>
                                 </div>
                             </div>
                         </div>
@@ -132,14 +132,14 @@ onMounted(() => {
                     <!-- Preguntas Frecuentes -->
                     <Transition name="slide-fade">
                         <div v-if="showFAQ" class="faq-section mt-5">
-                            <h2 class="text-center text-primary fw-bold mb-3">Preguntas Frecuentes</h2>
+                            <h2 class="text-center text-primary fw-bold mb-3">{{ $t('services.faq.title') }}</h2>
                             
                             <!-- Pregunta 1 -->
                             <div class="card card-custom shadow-sm mb-3">
                                 <div class="card-body">
-                                    <h5 class="fw-bold">¿Cuál es el proceso de trabajo?</h5>
+                                    <h5 class="fw-bold">{{ $t('services.faq.question1.question') }}</h5>
                                     <p class="text-muted">
-                                        Comienzo con una reunión inicial para entender tus necesidades. Luego, propongo un plan detallado y lo implemento en fases, manteniéndote informado en cada etapa.
+                                        {{ $t('services.faq.question1.answer') }}
                                     </p>
                                 </div>
                             </div>
@@ -147,9 +147,9 @@ onMounted(() => {
                             <!-- Pregunta 2 -->
                             <div class="card card-custom shadow-sm mb-3">
                                 <div class="card-body">
-                                    <h5 class="fw-bold">¿Ofreces soporte después del lanzamiento?</h5>
+                                    <h5 class="fw-bold">{{ $t('services.faq.question2.question') }}</h5>
                                     <p class="text-muted">
-                                        Sí, ofrezco soporte post-lanzamiento para asegurar que todo funcione correctamente y realizar ajustes necesarios según el feedback de los usuarios.
+                                        {{ $t('services.faq.question2.answer') }}
                                     </p>
                                 </div>
                             </div>

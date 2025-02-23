@@ -53,24 +53,18 @@ onMounted(() => {
                                 </div>
                                 <div class="col-md-8">
                                     <h2 class="fw-bold">
-                                        Hola, soy Ely Errico
+                                        {{ $t('about.hero.title') }}
                                     </h2>
                                     <p class="text-muted">
-                                        Soy desarrollador web con experiencia en
-                                        soluciones Full Stack utilizando Laravel
-                                        y Vue.js. Me especializo en desarrollar
-                                        aplicaciones a medida para clientes y en
-                                        crear portafolios personalizados.
+                                        {{ $t('about.hero.subtitle') }}
                                     </p>
                                     <p class="text-muted">
-                                        Si tienes un proyecto en mente o
-                                        simplemente quieres charlar, no dudes en
-                                        contactarme.
+                                        {{ $t('about.contact.description') }}
                                     </p>
                                     <a
                                         href="#contact"
                                         class="btn btn-primary mt-3"
-                                        >Contáctame</a
+                                        >{{ $t('about.hero.contactButton') }}</a
                                     >
                                 </div>
                             </div>
@@ -84,19 +78,13 @@ onMounted(() => {
                             class="card card-custom shadow-sm p-4 mt-4"
                         >
                             <h2 class="text-center mb-4 text-primary fw-bold">
-                                Mi Historia
+                                {{ $t('about.about.title') }}
                             </h2>
                             <p
                                 class="text-center text-muted mx-auto"
                                 style="max-width: 800px"
                             >
-                                Comencé mi camino en el desarrollo web hace
-                                algunos años, combinando mis conocimientos
-                                técnicos y mi pasión por resolver problemas para
-                                crear soluciones eficientes. Hoy, me enfoco
-                                exclusivamente en programación y desarrollo,
-                                trabajando en diversos proyectos para clientes y
-                                perfeccionando continuamente mis habilidades.
+                                {{ $t('about.about.description') }}
                             </p>
                         </div>
                     </Transition>
@@ -107,7 +95,7 @@ onMounted(() => {
                             <h2
                                 class="text-center mb-3 text-primary fw-bold mt0 fs-4"
                             >
-                                Habilidades
+                                {{ $t('about.skills.title') }}
                             </h2>
                             <div class="text-center">
                                 <!-- Frontend -->
@@ -117,7 +105,7 @@ onMounted(() => {
                                             class="card card-custom shadow-sm border-0"
                                         >
                                             <div class="card-body">
-                                                <h3>Frontend</h3>
+                                                <h3>{{ $t('about.skills.frontend') }}</h3>
                                                 <div
                                                     class="d-flex justify-content-center align-items-center gap-3"
                                                 >
@@ -158,7 +146,7 @@ onMounted(() => {
                                             class="card card-custom shadow-sm border-0"
                                         >
                                             <div class="card-body">
-                                                <h3>Backend</h3>
+                                                <h3>{{ $t('about.skills.backend') }}</h3>
                                                 <div
                                                     class="d-flex justify-content-center align-items-center gap-3"
                                                 >
@@ -189,7 +177,7 @@ onMounted(() => {
                                             class="card card-custom shadow-sm border-0"
                                         >
                                             <div class="card-body">
-                                                <h3>Otras</h3>
+                                                <h3>{{ $t('about.skills.others') }}</h3>
                                                 <div
                                                     class="d-flex justify-content-center align-items-center gap-3 flex-wrap"
                                                 >

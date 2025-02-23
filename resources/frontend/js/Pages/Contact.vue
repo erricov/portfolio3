@@ -32,21 +32,21 @@ onMounted(() => {
                 <div class="col-md-8">
                     <Transition name="slide-fade">
                         <div v-if="showForm" class="card card-custom shadow-sm p-4">
-                            <h2 class="text-primary fw-bold mb-3">Formulario de Contacto</h2>
+                            <h2 class="text-primary fw-bold mb-3">{{ $t('contact.form.title') }}</h2>
                             <form>
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">Nombre</label>
+                                    <label for="name" class="form-label">{{ $t('contact.form.name') }}</label>
                                     <input type="text" id="name" class="form-control" placeholder="Tu nombre completo" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
+                                    <label for="email" class="form-label">{{ $t('contact.form.email') }}</label>
                                     <input type="email" id="email" class="form-control" placeholder="Tu email" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="message" class="form-label">Mensaje</label>
+                                    <label for="message" class="form-label">{{ $t('contact.form.message') }}</label>
                                     <textarea id="message" class="form-control" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100 mt-3">Enviar</button>
+                                <button type="submit" class="btn btn-primary w-100 mt-3">{{ $t('contact.form.sendButton') }}</button>
                             </form>
                         </div>
                     </Transition>
@@ -57,13 +57,13 @@ onMounted(() => {
                     <!-- Información de contacto -->
                     <Transition name="slide-fade">
                         <div v-if="showContactInfo" class="contact-info-section">
-                            <h2 class="text-center text-primary fw-bold mb-3">Información de Contacto</h2>
+                            <h2 class="text-center text-primary fw-bold mb-3">{{ $t('contact.info.title') }}</h2>
                             <div class="card card-custom shadow-sm mb-4">
                                 <div class="card-body">
-                                    <p><strong>Email:</strong> contacto@elyerrico.dev</p>
-                                    <p><strong>Teléfono:</strong> +123 456 7890</p>
-                                    <p><strong>Ubicación:</strong> Ciudad, País</p>
-                                    <p><strong>Horario de Atención:</strong> Lunes a Viernes, 9:00 am - 6:00 pm</p>
+                                    <p><strong>{{ $t('contact.info.email') }}</strong></p>
+                                    <p><strong>{{ $t('contact.info.phone') }}</strong></p>
+                                    <p><strong>{{ $t('contact.info.location') }}</strong></p>
+                                    <p><strong>{{ $t('contact.info.hours') }}</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -72,14 +72,14 @@ onMounted(() => {
                     <!-- Preguntas Frecuentes -->
                     <Transition name="slide-fade">
                         <div v-if="showFAQ" class="faq-section mt-5">
-                            <h2 class="text-center text-primary fw-bold mb-3">Preguntas Frecuentes</h2>
+                            <h2 class="text-center text-primary fw-bold mb-3">{{ $t('contact.faq.title') }}</h2>
 
                             <!-- Pregunta 1 -->
                             <div class="card card-custom shadow-sm mb-3">
                                 <div class="card-body">
-                                    <h5 class="fw-bold">¿Cuál es el tiempo de respuesta?</h5>
+                                    <h5 class="fw-bold">{{ $t('contact.faq.question1.question') }}</h5>
                                     <p class="text-muted">
-                                        Usualmente respondo en un plazo de 24 a 48 horas. Sin embargo, si es un tema urgente, indícalo en el mensaje para priorizarlo.
+                                        {{ $t('contact.faq.question1.answer') }}
                                     </p>
                                 </div>
                             </div>
@@ -87,9 +87,9 @@ onMounted(() => {
                             <!-- Pregunta 2 -->
                             <div class="card card-custom shadow-sm mb-3">
                                 <div class="card-body">
-                                    <h5 class="fw-bold">¿Ofreces reuniones virtuales?</h5>
+                                    <h5 class="fw-bold">{{ $t('contact.faq.question2.question') }}</h5>
                                     <p class="text-muted">
-                                        Sí, se pueden agendar reuniones virtuales para discutir los detalles de tu proyecto y resolver cualquier duda que tengas.
+                                        {{ $t('contact.faq.question2.answer') }}
                                     </p>
                                 </div>
                             </div>
